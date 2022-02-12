@@ -1,26 +1,31 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import "./index.css";
+import React from "react"
+import { Container } from "react-bootstrap"
+import { Content } from "./components/Content"
+import Header from "./components/Header"
+import { Selection } from "./components/Selection"
+// import { mydata } from "./data/Data"
+import { catalog } from "./data/ExportCatalog"
+import "./index.css"
 
-function App() {
+const App: React.FC = () => {
+    const [selectedData, setSelectedData] = React.useState([{}])
+    // console.log(selectedData)
+    // console.log(Object.keys(selectedData[0]).length)
     return (
-        <div className="App">
-            <header className="App-header">
-                <Navbar />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
+        <div>
+            <Container>
+                <Header />
+                <Selection
+                    catalog={catalog}
+                    selectedData={selectedData}
+                    setSelectedData={setSelectedData}
+                />
+                {Object.keys(selectedData[0]).length > 0 && (
+                    <Content selectedData={selectedData} />
+                )}
+            </Container>
         </div>
-    );
+    )
 }
 
-export default App;
+export default App

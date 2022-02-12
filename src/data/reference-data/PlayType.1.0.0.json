@@ -1,0 +1,16 @@
+{
+  "$id": "https://schema.osdu.opengroup.org/json/reference-data/PlayType.1.0.0.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PlayType",
+  "description": "The focus or area conducive to hydrocarbon discovery and includes the related activities for the development and production of the reservoir.",
+  "x-osdu-governance-authorities": [
+    "None"
+  ],
+  "x-osdu-governance-model": "LOCAL",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "../abstract/AbstractReferenceType.1.0.0.json"
+    }
+  ]
+}
